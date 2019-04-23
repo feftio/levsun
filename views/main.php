@@ -17,6 +17,7 @@
 
 <body>
 	<div class="wrapper">
+
 		<div class="wrapper__navigation" id="wrapper__navigation"></div>
 		<header class="header">
 			<div class="header__overlay"></div>
@@ -27,15 +28,22 @@
 					</div>
 					<div class="navbar__logo" id="navbar__logo">
 						<a class="navbar__logo__cinema" id="a" href="#">CINEMA</a>
-						<a class="navbar__logo__picture" href="#"><img src="../template/image/logoCN1.png" alt="placeholder+image" width="70" height="70"></a>
+						<a class="navbar__logo__picture" href="#"><img src="../template/image/logoCN1.png" alt="placeholder+image" width="60" height="60"></a>
 						<a class="navbar__logo__night" href="#">NIGHT</a>
 					</div>
 					<ul class="navbar__list" id="navbar__list">
-						<li class="navbar__list__li"><a href="#">Главная</a></li>
-						<li class="navbar__list__li"><a href="#">Зал 1</a></li>
-						<li class="navbar__list__li"><a href="#">Зал 2</a></li>
-						<li class="navbar__list__li"><a href="#">Зал 3</a></li>
-						<li class="navbar__list__li"><a href="#">Контакты</a></li>
+						<li class="navbar__list__li">
+							<a class="navbar__list__a" href="#">
+								<i class="navbar__list__ico fas fa-mobile-android"></i>
+								<span class="navbar__list__span">Главная</span>
+							</a>
+						</li>
+						<li class="navbar__list__li">
+							<a class="navbar__list__a" href="#">
+								<i class="navbar__list__ico far fa-phone-volume"></i>
+								<span class="navbar__list__span">Контакты</span>
+							</a>
+						</li>
 					</ul>
 					<div class="navbar__form" id="navbar__form">
 						<a class="navbar__form__login" href="#"><i class="fal fa-sign-in"></i></a>
@@ -48,10 +56,15 @@
 					<p class="header__text__p2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
 				</div>
 			</section>
+			<div class="pointer__down"><a class="pointer__down__a" href="#section__info">Вниз!</a></div>
 		</header>
-		<section class="section__info"></section>
-	</div>
 
+		<section class="section__info" id="section__info">
+		</section>
+
+
+
+	</div>
 	<script type="text/javascript" src="../template/js/jquery-3.3.1.min.js"></script>
 	<script src="../template/js/main__script.js"></script>
 </body>
