@@ -295,9 +295,9 @@ a {
 }
 
 .info__headline__h1 {
-	color: #262020;
+	color: #2E2E2E;
 	font-family: Amatic SC;
-	font-size: 60px;
+	font-size: 80px;
 	font-weight: 600;
 	margin-bottom: 20px;
 }
@@ -337,10 +337,10 @@ a {
 	display: block;
 	min-height: 140px;
 	min-width: 140px;
-	background: url(../image/popcorn.png) no-repeat center;
+	background: url(../image/pictpop.png) no-repeat center;
 	background-size: 100% 100%;
 	border-radius: 200%;
-	border: 1px solid black;
+	border: 5px solid #2196F3;
 }
 
 .info__h2 {

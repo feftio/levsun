@@ -4,7 +4,7 @@
  */
 class MainController 
 {
-	public function actionIndex() 
+	public function actionIndex()
 	{
 		include_once(ROOT . '/views/main.php');
 	}
