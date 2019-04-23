@@ -33,20 +33,29 @@
 					</div>
 					<ul class="navbar__list" id="navbar__list">
 						<li class="navbar__list__li">
-							<a class="navbar__list__a" href="#">
-								<i class="navbar__list__ico fas fa-mobile-android"></i>
+							<a class="navbar__list__a menu__active" href="#">
+								<i class="ico__main fas fa-mobile-android"></i>
 								<span class="navbar__list__span">Главная</span>
 							</a>
 						</li>
 						<li class="navbar__list__li">
 							<a class="navbar__list__a" href="#">
-								<i class="navbar__list__ico far fa-phone-volume"></i>
+								<i class="ico__contact far fa-phone-volume"></i>
 								<span class="navbar__list__span">Контакты</span>
+							</a>
+						</li>
+						<li class="navbar__list__li">
+							<a class="navbar__list__a" href="#">
+								<i class="ico__documentation fas fa-books"></i>
+								<span class="navbar__list__span">Документация</span>
 							</a>
 						</li>
 					</ul>
 					<div class="navbar__form" id="navbar__form">
-						<a class="navbar__form__login" href="#"><i class="fal fa-sign-in"></i></a>
+						<a class="navbar__form__login" href="#">
+							<i class="fal fa-sign-in"></i>
+							<span class="navbar__form__span">Войти</span>
+						</a>
 					</div>
 				</div>
 			</nav>
@@ -56,10 +65,23 @@
 					<p class="header__text__p2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
 				</div>
 			</section>
-			<div class="pointer__down"><a class="pointer__down__a" href="#section__info">Вниз!</a></div>
 		</header>
 
-		<section class="section__info" id="section__info">
+		<section class="info" id="info">
+			<div class="info__wrapper">
+				<div class="info__block">
+					<div class="info__circle"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__circle"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__circle"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__circle"></div>
+				</div>
+			</div>
 		</section>
 
 
