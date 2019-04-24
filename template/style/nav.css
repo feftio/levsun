@@ -12,6 +12,12 @@
 
 /*-----------------*/
 
+.menu__active {
+	color: #DFA322;
+}
+
+/*-----------------*/
+
 .navbar {
 	display: block;
 	position: fixed;

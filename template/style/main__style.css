@@ -1,13 +1,3 @@
-@font-face {
-    font-family: Cinzel;
-    src: url(../style/lib/fonts/Cinzel.ttf);
-}
-
-@font-face {
-    font-family: Amatic SC;
-    src: url(../style/lib/fonts/AmaticSC-Regular.ttf);
-   }
-
 /*-----------------*/
 
 .wrapper {
@@ -98,12 +88,6 @@
 
 .section__info {
 	height: 2000px;
-}
-
-/*-----------------*/
-
-.menu__active {
-	color: #DFA322;
 }
 
 /*-----------------*/

@@ -44,23 +44,13 @@ class Router
 
     private function includeConfig($controllerName)
     { 
-        $pathInfoFile = $this->pathGlobal . $controllerName . '.php';
-        if (file_exists($pathInfoFile))
+        $pathGlobalFile = $this->pathGlobal . $controllerName . '.php';
+        if (file_exists($pathGlobalFile))
         {
             global $Global;
-            $Global = require_once $pathInfoFile;
-        }
-        else 
-        {
-        	if (file_exists($this->pathDefaultGlobalFile))
-        	{
-        		global $Global;
-        		$Global = require_once $this->pathDefaultGlobalFile;
-        	}
-        	else
-        	{
-        		echo "There isn't global_default.php and global_*.php";
-        	}
+            $DefaultGlobal = require_once $this->pathDefaultGlobalFile;
+            $WebGlobal = require_once $pathGlobalFile;
+            $Global = array_merge($DefaultGlobal, $WebGlobal);
         }
     }
 

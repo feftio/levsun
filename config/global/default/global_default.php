@@ -8,6 +8,7 @@ return array(
 	'default.css' => True,
 	'main__style.css' => True,
 	'nav.css' => True,
+	'fonts.css' => True,
 	'title' => 'Киноночь Алматы',
 	'menu__active' => 'main'
 );
