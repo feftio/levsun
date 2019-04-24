@@ -1,14 +1,3 @@
-<?php
-
-
-include_once ROOT . '/views/parts/head.php';
-
-
-?>
-
-
-
-
 <?php 
 require_once ROOT . '/lib/fpdf/fpdf.php';
 require_once ROOT . '/lib/fpdf/qr-code/qrcode.class.php';

@@ -6,11 +6,18 @@ class Router
 {
 
     private $routes;
+    private $pathGlobal;
+    private $pathModels;
+    private $pathRoutes;
+    private $pathDefaultGlobalFile;
 
     public function __construct()
     {
-        $routesPath = ROOT . '\config\routes.php';
-        $this->routes = include($routesPath);
+        $this->pathGlobal = ROOT . '\config\global\global_';
+        $this->pathRoutes = ROOT . '\config\routes.php';
+        $this->pathModels = ROOT . '\models\\';
+        $this->pathDefaultGlobalFile = ROOT . '\config\global\default\global_default.php';
+        $this->routes = include($this->pathRoutes);
     }
 
     private function getURI()
@@ -21,7 +28,7 @@ class Router
         }
     }
 
-    private function including($controllerFile, $controllerName, $actionName, $parameters)
+    private function includeController($controllerFile, $controllerName, $actionName, $parameters)
     {
         if (file_exists($controllerFile)) 
         {
@@ -29,13 +36,52 @@ class Router
             $controllerObject = new $controllerName;
             $controllerObject->$actionName($parameters);
         }
+        else 
+        {
+        	echo "There isn't file on this path: " . $controllerFile;
+        }
+    }
+
+    private function includeConfig($controllerName)
+    { 
+        $pathInfoFile = $this->pathGlobal . $controllerName . '.php';
+        if (file_exists($pathInfoFile))
+        {
+            global $Global;
+            $Global = require_once $pathInfoFile;
+        }
+        else 
+        {
+        	if (file_exists($this->pathDefaultGlobalFile))
+        	{
+        		global $Global;
+        		$Global = require_once $this->pathDefaultGlobalFile;
+        	}
+        	else
+        	{
+        		echo "There isn't global_default.php and global_*.php";
+        	}
+        }
+    }
+
+    private function includeModel($controllerName)
+    {
+        $controllerName = ucfirst($controllerName);
+        $pathModelFile = $this->pathModels . $controllerName . '.php';
+        if (file_exists($pathModelFile))
+        {
+            require_once $pathModelFile;
+        }
+        else
+        {
+        	echo "There isn't file of Model on this path: " . $pathModelFile;
+        }
     }
 
     public function run()
     {
         $uri = $this->getURI();
         $isThere = false;
-
         if (!($uri === ''))
         {
             foreach ($this->routes as $uriPattern => $path) 
@@ -44,13 +90,18 @@ class Router
                 {
                     $internalRoute = preg_replace("~$uriPattern~", $path, $uri);       
                     $segments = explode('/', $internalRoute);
-                    $controllerName = ucfirst(array_shift($segments)) . 'Controller';
-                    $actionName = 'action' . ucfirst(array_shift($segments));
-                    $controllerFile = ROOT . '\controllers\\' . $controllerName . '.php';
+
+                    $controllerName = $segments[0];
+                    $controllerFullName = ucfirst(array_shift($segments)) . 'Controller';
+                    $actionName = $segments[0];
+                    $actionFullName = 'action' . ucfirst(array_shift($segments));
+                    $controllerFile = ROOT . '\controllers\\' . $controllerFullName . '.php';
                     $parameters = $segments;
-    
-                    $this->including($controllerFile, $controllerName, $actionName, $parameters);
-                    $isThere = true;  
+
+                    $this->includeModel($controllerName);
+                    $this->includeConfig($controllerName);
+                    $this->includeController($controllerFile, $controllerFullName, $actionFullName, $parameters);
+                    $isThere = true;
                 }  
             }
 
@@ -61,7 +112,9 @@ class Router
         }
         else
         {
-            $this->including(ROOT . '\controllers\MainController.php', 'MainController', 'actionIndex', '');
+        	$this->includeModel('main');
+            $this->includeConfig('main');
+            $this->includeController(ROOT . '\controllers\MainController.php', 'MainController', 'actionIndex', '');
         }
     }
 }

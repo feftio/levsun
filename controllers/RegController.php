@@ -7,7 +7,7 @@ class RegController
 {
 	public function actionIndex()
 	{
-		include_once ROOT . '/config/html/into.php';
+		global $Global;
 		include_once ROOT . '/views/reg.php';
 	}
 }

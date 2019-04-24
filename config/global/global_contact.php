@@ -3,9 +3,11 @@
 //							SETTING START INFO
 //*******************************************************************************
 
-$into = [
+return array(
 	'fontawesome' => True,
+	'default.css' => True,
 	'main__style.css' => True,
+	'nav.css' => True,
 	'title' => 'Киноночь Алматы',
-	'menu__active' => 'main'
-];
+	'menu__active' => 'contact'
+);

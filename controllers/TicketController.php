@@ -1,5 +1,4 @@
 <?php
-include_once ROOT . '/models/Ticket.php';
 /**
  * 
  */
@@ -8,7 +7,7 @@ class TicketController
 
 	public function actionId($params)
 	{
-		include_once ROOT . '/config/html/into.php';
+		global $Global;
 		include_once ROOT . '/config/db/db_tables.php';
 		include_once ROOT . '/config/pdf/pdf_ticket.php';
 
@@ -21,4 +20,4 @@ class TicketController
 		include_once ROOT . '/views/ticketing.php';
 	}
 		
-}	
+}

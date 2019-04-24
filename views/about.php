@@ -1,6 +1,3 @@
-<?php
-$into['menu__active'] = 'about';
-?>
 <!DOCTYPE html>
 <html lang="ru">
 
