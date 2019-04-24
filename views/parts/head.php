@@ -8,22 +8,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="../../template/image/favicon.ico">
 
-	<?php if ($Global['default.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/default.css">
-	<?php } ?>
+
 
 	<?php if ($Global['fonts.css']){ ?>
 	<link rel="stylesheet" href="../../template/style/fonts.css">
 	<?php } ?>
 
+	<?php if ($Global['default.css']){ ?>
+	<link rel="stylesheet" href="../../template/style/default.css">
+	<?php } ?>
+
 	<?php if ($Global['nav.css']){ ?>
 	<link rel="stylesheet" href="../../template/style/nav.css">
 	<?php } ?>
-	
+
 	<?php if ($Global['main__style.css']){ ?>
 	<link rel="stylesheet" href="../../template/style/main__style.css">
 	<?php } ?>
-
 	
 
 	

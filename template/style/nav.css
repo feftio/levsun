@@ -13,7 +13,7 @@
 /*-----------------*/
 
 .menu__active {
-	color: #DFA322;
+	color: #DFA322 !important;
 }
 
 /*-----------------*/
@@ -30,7 +30,7 @@
 }
 
 .navbar__opacity {
-	background-color: rgba(0, 0, 0, 0.95);
+	background-color: rgba(0, 0, 0, 0.95) !important;
 }
 
 .navbar__container {
