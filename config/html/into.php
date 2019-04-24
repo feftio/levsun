@@ -6,5 +6,6 @@
 $into = [
 	'fontawesome' => True,
 	'main__style.css' => True,
-	'title' => 'Киноночь Алматы'
+	'title' => 'Киноночь Алматы',
+	'menu__active' => 'main'
 ];

@@ -3,6 +3,9 @@
 return array(
 	'id([0-9]{0,10}$)' => 'user/id/$1',
 	'ticket([0-9]{0,10}$)' => 'ticket/id/$1',
-	'reg' => 'reg/index'
+	'reg' => 'reg/index',
+	'about' => 'about/index',
+	'contact' => 'contact/index',
+	'doc' => 'doc/index'
 	//'' => 'main/index/$1'
  );
