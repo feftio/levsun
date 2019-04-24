@@ -1,25 +1,26 @@
-<?php
-$into = [
-	'title' => 'Киноночь Алматы',
-	'fontawesome' => False
-];
-?>
 <!DOCTYPE html>
 <html lang="ru">
-
 <?php include_once ROOT . '/views/parts/head.php'; ?>
-
 <body>
 	<div class="wrapper">
+		<div class="wrapper__navigation" id="wrapper__navigation"></div>
+		<header class="header">
+			<div class="header__overlay"></div>
+			
+			<?php include_once ROOT . '/views/parts/nav.php'; ?>
 
-		<?php include_once ROOT . '/views/parts/header.php'; ?>
-
+			<section class="header__text">
+				<div class="header__text__block">
+					<p class="header__text__p1">Онлайн-покупка билетов на киноночь!</p>
+					<p class="header__text__p2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+				</div>
+			</section>
+		</header>
 		<section class="info" id="info">
 			<div class="info__headline">
 				<h1 class="info__headline__h1">Inforamation about!</h1>
 				<p class="info__healine__p">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 			</div>
-
 			<div class="info__wrapper">
 				<div class="info__block img__glasses">
 					<div class="info__circle"></div>
@@ -44,29 +45,12 @@ $into = [
 			</div>
 		</section>
 
-		<footer class="footer">
-			<div class="social">
-				<a class="social__a" href="#">
-					<i class="fab fa-vk"></i>
-					<span>Вконтакте</span>
-				</a>
-				<a class="social__a" href="#">
-					<i class="fa fa-telegram" aria-hidden="true"></i>
-					<span>Телеграм</span>
-				</a>
-				<a class="social__a" href="#">
-					<i class="fab fa-facebook-f"></i>
-					<span>Фейсбук</span>
-				</a>
-				<a class="social__a" href="#">
-					<i class="fab fa-instagram"></i>
-					<span>Инстаграм</span>
-				</a>
-			</div>
-		</footer>
+		<?php include_once ROOT . '/views/parts/footer.php'; ?>
 
 	</div>
+
 <?php include_once ROOT . '/views/parts/scripts.php'; ?>
+
 </body>
 
 </html>

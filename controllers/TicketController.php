@@ -8,7 +8,8 @@ class TicketController
 
 	public function actionId($params)
 	{
-		include ROOT . '/config/db/db_tables.php';
+		include_once ROOT . '/config/html/into.php';
+		include_once ROOT . '/config/db/db_tables.php';
 		include_once ROOT . '/config/pdf/pdf_ticket.php';
 
 		$IDEN  = $params[0];
@@ -19,6 +20,5 @@ class TicketController
 
 		include_once ROOT . '/views/ticketing.php';
 	}
-		
 		
 }	

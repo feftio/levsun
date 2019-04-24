@@ -1,4 +1,7 @@
 <?php
+/**
+ * 
+ */
 class Ticket
 {
 	public static function getTicketKeyById($id)
@@ -48,7 +51,8 @@ class Ticket
 
 		if (!($CODE_IN_DATABASE)) 
 		{ 
-			echo '[["iden" or "login" or "code" are not correct]]';
+			//echo '[["iden" or "login" or "code" are not correct]]';
+			require_once ROOT . '/error.php';
 			exit;
 		} 
 		else 

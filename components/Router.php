@@ -25,7 +25,7 @@ class Router
     {
         if (file_exists($controllerFile)) 
         {
-            include_once($controllerFile);
+            require_once $controllerFile;
             $controllerObject = new $controllerName;
             $controllerObject->$actionName($parameters);
         }

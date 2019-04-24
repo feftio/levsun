@@ -7,6 +7,7 @@ class RegController
 {
 	public function actionIndex()
 	{
-		include_once(ROOT . '/views/reg.php');
+		include_once ROOT . '/config/html/into.php';
+		include_once ROOT . '/views/reg.php';
 	}
 }

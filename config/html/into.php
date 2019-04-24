@@ -8,4 +8,3 @@ $into = [
 	'main__style.css' => True,
 	'title' => 'Киноночь Алматы'
 ];
-

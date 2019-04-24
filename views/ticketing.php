@@ -1,62 +1,19 @@
+<?php
+
+
+include_once ROOT . '/views/parts/head.php';
+
+
+?>
+
+
+
+
 <?php 
-require_once(ROOT . '/lib/fpdf/fpdf.php');
-require_once(ROOT . '/lib/fpdf/qr-code/qrcode.class.php');
-require_once(ROOT . '/lib/fpdf/code128.php');
+require_once ROOT . '/lib/fpdf/fpdf.php';
+require_once ROOT . '/lib/fpdf/qr-code/qrcode.class.php';
+require_once ROOT . '/lib/fpdf/code128.php';
 
-
-/*
-if (!($LOGIN == '')) 
-		{
-			if ($CODE == '') 
-			{
-				$NEW_CODE = TRUE;
-			} 
-			else
-			{
-				$NEW_CODE = FALSE;
-			}
-
-			if ($NEW_CODE) 
-			{
-				$TRUE_CODE = FALSE;
-
-				while (!($TRUE_CODE)) 
-				{
-					$RANDOM_STRING = self::generateRandomString($TYPE_GENERATION_CODE['STR_UP_LENGTH'], $TYPE_GENERATION_CODE['STR_DOWN_LENGTH'], $TYPE_GENERATION_CODE['STR_NUMBER_LENGTH']);
-					$CODE_IN_DATABASE = R::findone($TABLE_NAME['TABLE_FOR_CODE'], 'code = ?', [$RANDOM_STRING]);
-
-					if (is_null($CODE_IN_DATABASE))
-					{ 
-						$TRUE_CODE = TRUE;
-						${$TABLE_NAME['TABLE_FOR_CODE']}->login = $LOGIN;
-						${$TABLE_NAME['TABLE_FOR_CODE']}->code = $RANDOM_STRING;
-						R::store(${$TABLE_NAME['TABLE_FOR_CODE']});
-						R::close();
-					}	
-				} 
-			}
-			else
-			{
-				$CODE_IN_DATABASE = R::getAll( 'SELECT * FROM `' . $TABLE_NAME['TABLE_FOR_CODE'] . '` WHERE login = :login and code = :code', array(':login' => $LOGIN, ':code' => $CODE));
-
-				if (!($CODE_IN_DATABASE[0])) 
-				{ 
-					echo 'Ошибка! Не совпадает код с БД!';
-					exit;
-				} 
-				else 
-				{
-					$RANDOM_STRING = $CODE;
-				}
-			}
-		} 
-		else 
-		{
-			echo 'LOGIN ="" (Отсутствует LOGIN)';
-			exit;
-		}
-	}
-*/
 //***************************************************************
 //							CLASS RESET
 //***************************************************************
@@ -166,3 +123,4 @@ $qrcode2->displayFPDF($pdf,27.5,61,15);
 $qrcode3 = new QrCode($RANDOM_STRING,'Q');
 $qrcode3->displayFPDF($pdf,44,61,15);
 $pdf->Output('Ticketing.pdf','I');
+?>
