@@ -15,6 +15,7 @@ $into['menu__active'] = 'doc';
 			<?php include_once ROOT . '/views/parts/nav.php'; ?>
 
 		</header>
+		<?php include_once ROOT . '/views/parts/footer.php'; ?>
 	</div>
 
 	<?php include_once ROOT . '/views/parts/scripts.php'; ?>

@@ -1,5 +1,5 @@
 <footer class="footer">
-	<div class="social">
+	<div class="footer__social">
 		<a class="social__a" href="#">
 			<i class="fab fa-vk"></i>
 			<span>Вконтакте</span>

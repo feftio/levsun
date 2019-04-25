@@ -25,11 +25,12 @@
 	<?php if ($Global['main__style.css']){ ?>
 	<link rel="stylesheet" href="../../template/style/main__style.css">
 	<?php } ?>
-	
 
-	
+	<?php if ($Global['footer.css']){ ?>
+	<link rel="stylesheet" href="../../template/style/footer.css">
+	<?php } ?>
 
-	
+
 
 	<?php if ($Global['fontawesome']){ ?>
 	<script defer src="../../template/style/lib/fontawesome/all.js"></script>
