@@ -7,5 +7,5 @@ return array(
 	'about' => 'about/index',
 	'contact' => 'contact/index',
 	'doc' => 'doc/index'
-	//'' => 'main/index/$1'
+	//'' => 'main/index'
  );

@@ -4,12 +4,9 @@
 //*******************************************************************************
 
 return array(
-	'fontawesome' => True,
-	'default.css' => True,
-	'main__style.css' => True,
-	'nav.css' => True,
-	'fonts.css' => True,
-	'footer.css' => True,
 	'title' => 'Киноночь Алматы',
-	'menu__active' => 'main'
+
+	'css' => array(
+		'default.css'
+	)
 );

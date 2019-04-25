@@ -1,6 +1,6 @@
 <?php
 require_once ROOT . '/lib/rb.php';
-require_once ROOT . '/config/db/db_connection.php';
+require_once ROOT . '/config/db/db__connection.php';
 
 R::setup("mysql:host={$DATABASE_HOST};dbname={$DATABASE_NAME}","{$DATABASE_LOGIN}", "{$DATABASE_PASSWORD}"); 
 
