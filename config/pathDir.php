@@ -11,7 +11,4 @@ return array(
 	'css' => '/template/style',
 	'js' => '/template/js',
 
-	//** FILE **//
-	'global__default.php' => '/config/global/default/global__default.php'
-	
 );

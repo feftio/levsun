@@ -5,13 +5,12 @@
 class Router
 {
 
-    private $routes;
-    private $path;
-
     public function __construct()
     {
-    	$this->path   = include_once ROOT . '\config\path.php';
-        $this->routes = include_once ROOT . '\config\routes.php';
+    	G::$PathDir  = include_once ROOT . '\config\pathDir.php';
+        G::$PathFile = include_once ROOT . '\config\pathFile.php';
+        G::$Routes   = include_once ROOT . '\config\routes.php';
+        G::$Prefix   = include_once ROOT . '\config\prefix.php';
     }
 
     private function checkPath()
@@ -43,79 +42,49 @@ class Router
         }
     }
 
-    private function array_merge_recursive_simple() {
 
-    if (func_num_args() < 2) 
-    {
-        trigger_error(__METHOD__ .' needs two or more array arguments', E_USER_WARNING);
-        return;
-    }
-    $arrays = func_get_args();
-    $merged = array();
-    while ($arrays) {
-        $array = array_shift($arrays);
-        if (!is_array($array)) {
-            trigger_error(__METHOD__ .' encountered a non array argument', E_USER_WARNING);
-            return;
-        }
-        if (!$array)
-            continue;
-        foreach ($array as $key => $value)
-            if (is_string($key))
-                if (is_array($value) && array_key_exists($key, $merged) && is_array($merged[$key]))
-                    $merged[$key] = call_user_func(__METHOD__, $merged[$key], $value);
-                else
-                    $merged[$key] = $value;
-            else
-                $merged[] = $value;
-    }
-    return $merged;
-	}
+
+
+
+
+
 
     private function includeModel($controllerName)
     {
     	$controllerName = ucfirst($controllerName);
-
-    	$pathModels = ROOT . $this->path['models'] . '/';
-        $pathModelFile = $pathModels . $controllerName . '.php';
+        $pathModelFile  = G::getFull_PathDir('models') . $controllerName . '.php';
         $this->checkPath($pathModelFile);
+
         require_once $pathModelFile;
     }
 
     private function includeGlobal($controllerName)
     {
-        $pathGlobal = ROOT . $this->path['global'] . '/';
-        $pathGlobalFile = $pathGlobal . 'global__' . $controllerName . '.php';
-        $pathGlobalDefaultFile = ROOT . $this->path['global__default.php'];
+        $pathGlobalFile        = G::getFull_PathDir('global') . 'global__' . $controllerName . '.php';
+        $pathGlobalDefaultFile = G::getFull_PathFile('global__default.php');
         $this->checkPath($pathGlobalFile, $pathGlobalDefaultFile);
 
-        global $Global;
-        $DefaultGlobal = require_once $pathGlobalDefaultFile;
-        $WebGlobal = require_once $pathGlobalFile;
-        //$Global = array_merge($WebGlobal, $DefaultGlobal);
-        $Global = array_merge_recursive($DefaultGlobal, $WebGlobal);
-        print_r($Global);
-        exit;
+        G::setGlobalD(require_once $pathGlobalDefaultFile);
+        G::setGlobalF(require_once $pathGlobalFile);
+        G::setGlobalM(array_merge_recursive(G::$GlobalD, G::$GlobalF));
     }
-
-   
-
-
-
 
 	private function includeController($controllerFile, $controllerName, $actionName, $parameters)
     {
-        if (file_exists($controllerFile)) 
-        {
-            require_once $controllerFile;
-            $controllerObject = new $controllerName;
-            $controllerObject->$actionName($parameters);
-        }
-        else 
-        {
-        	echo "There isn't file on this path: " . $controllerFile;
-        }
+        $this->checkPath($controllerFile);
+        require_once $controllerFile;
+        $controllerObject = new $controllerName;
+        $controllerObject->$actionName($parameters);
     }
+
+
+
+
+
+
+
+
+
 
 
     public function run()

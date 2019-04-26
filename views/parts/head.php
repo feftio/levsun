@@ -1,6 +1,6 @@
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo $Global['title']; ?></title>
+	<title><?php echo G::$GlobalM['title']; ?></title>
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content=" ">
@@ -8,29 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="../../template/image/favicon.ico">
 
-
-
-	<?php if ($Global['fonts.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/fonts.css">
+	<?php foreach (G::getPathes('GlobalM', 'css') as $value){ ?>
+	<link rel="stylesheet" href="<?php echo $value; ?>">
 	<?php } ?>
-
-	<?php if ($Global['default.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/default.css">
-	<?php } ?>
-
-	<?php if ($Global['nav.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/nav.css">
-	<?php } ?>
-
-	<?php if ($Global['main__style.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/main__style.css">
-	<?php } ?>
-
-	<?php if ($Global['footer.css']){ ?>
-	<link rel="stylesheet" href="../../template/style/footer.css">
-	<?php } ?>
-
-
 
 	<?php if ($Global['fontawesome']){ ?>
 	<script defer src="../../template/style/lib/fontawesome/all.js"></script>
