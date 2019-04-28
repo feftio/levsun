@@ -4,5 +4,12 @@
 //*******************************************************************************
 
 return array(
-	'menu__active' => 'about'
+	'menu__active' => 'about',
+
+	'css' => array(
+		//'main__style.css',
+		'nav.css',
+		'fonts.css',
+		'footer.css'
+	)
 );

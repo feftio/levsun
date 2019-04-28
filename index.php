@@ -6,5 +6,6 @@ define('ROOT', dirname(__FILE__));
 require_once ROOT . '/components/Global.php';
 require_once ROOT . '/components/Router.php';
 require_once ROOT . '/components/Database.php';
+
 $router = new Router();
 $router->run();

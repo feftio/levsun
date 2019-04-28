@@ -1,5 +1,4 @@
 <?php
-
 /**
  * 
  */
@@ -12,6 +11,7 @@ class G
 	public static $PathFile   = array();
 	public static $Routes     = array();
 	public static $Prefix     = array();
+	public static $DB         = array();
 
 //	******************************************
 
@@ -47,14 +47,10 @@ class G
 	public static function getPathes($array, $type)
 	{
 		$arr = array();
-		foreach (self::${$array}[$type] as $value) {
+		foreach ($array as $value) {
 			$arr[] = self::$PathDir[$type] . '/' . $value;
 		}
 		return $arr;
 	}
-
-
-
-
 
 }

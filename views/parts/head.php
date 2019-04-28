@@ -8,13 +8,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="../../template/image/favicon.ico">
 
-	<?php foreach (G::getPathes('GlobalM', 'css') as $value){ ?>
+	<?php foreach (G::getPathes(G::$GlobalM['css'], 'css') as $value){ ?>
 	<link rel="stylesheet" href="<?php echo $value; ?>">
 	<?php } ?>
 
-	<?php if ($Global['fontawesome']){ ?>
+	<?php foreach (G::getPathes(G::$GlobalM['js'], 'css') as $value){ ?>
+	<link rel="stylesheet" href="<?php echo $value; ?>">
+	<?php } ?>
+
+
+
+
+
+<!--
+	<?php //if ($Global['fontawesome']){ ?>
 	<script defer src="../../template/style/lib/fontawesome/all.js"></script>
 	<script defer src="../../template/style/lib/fontawesome/v4-shims.js"></script>
-	<?php } ?>
+	<?php //} ?>
+-->
 
 </head>

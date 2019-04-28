@@ -15,17 +15,3 @@ $TYPE_GENERATION_CODE = [
 ];
 
 $TEXT_HEADER = file_get_contents(ROOT . '/template/text/text.txt');
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,6 +10,6 @@ return array(
 		'main__style.css',
 		'nav.css',
 		'fonts.css',
-		'footer.css'
+		'footer.css',
 	)
 );

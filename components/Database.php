@@ -1,13 +1,35 @@
 <?php
 require_once ROOT . '/lib/rb.php';
-require_once ROOT . '/config/db/db__connection.php';
 
-R::setup("mysql:host={$DATABASE_HOST};dbname={$DATABASE_NAME}","{$DATABASE_LOGIN}", "{$DATABASE_PASSWORD}"); 
+
+
+R::setup("mysql:host=192.168.0.103;dbname=users","root",""); 
 
 if (!R::testConnection()) 
 {
 	exit ('[Problems with DB Connection]');
 }
+
+
+/*
+
+	'host'     => '192.168.0.103',
+	'name'     => 'users',         //utf8_general_ci
+	'login'    => 'root',
+	'password' => ''
+
+
+	'for__PDFkey' => 'ticketkeys',
+	'for__userinfo' => 'userinfo'
+
+*/
+
+
+
+
+
+
+
 
 /*
 ${$TABLE_NAME['TABLE_FOR_CODE']} = R::dispense($TABLE_NAME['TABLE_FOR_CODE']);	
@@ -18,3 +40,5 @@ R::store(${$TABLE_NAME['TABLE_FOR_CODE']});
 //R::wipe($TABLE_NAME['TABLE_FOR_CODE']);
 R::close();
 */
+
+

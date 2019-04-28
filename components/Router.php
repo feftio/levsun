@@ -7,10 +7,10 @@ class Router
 
     public function __construct()
     {
-    	G::$PathDir  = include_once ROOT . '\config\pathDir.php';
-        G::$PathFile = include_once ROOT . '\config\pathFile.php';
-        G::$Routes   = include_once ROOT . '\config\routes.php';
-        G::$Prefix   = include_once ROOT . '\config\prefix.php';
+    	G::$PathDir                 = include_once ROOT . '\config\pathDir.php';
+        G::$PathFile                = include_once ROOT . '\config\pathFile.php';
+        G::$Routes                  = include_once ROOT . '\config\routes.php';
+        G::$Prefix                  = include_once ROOT . '\config\prefix.php';
     }
 
     private function checkPath()
@@ -93,7 +93,7 @@ class Router
         $isThere = false;
         if (!($uri === ''))
         {
-            foreach ($this->routes as $uriPattern => $path) 
+            foreach (G::$Routes as $uriPattern => $path) 
             {
                 if (preg_match("~$uriPattern~", $uri)) 
                 {
