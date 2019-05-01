@@ -7,9 +7,10 @@ class Router
 
     public function __construct()
     {
-        G::setdirs(include_once ROOT . '\config\dirs.php');
-    	G::setroutes(include_once ROOT . '\config\routes.php');
-    	G::setrouter(include_once ROOT . '\config\router.php');
+        G::setdirs  (include_once(ROOT . G::getSysPath('dirs.php')));
+        G::setglobal(include_once(ROOT . G::getSysPath('global.php')));
+    	G::setroutes(include_once(ROOT . G::getSysPath('routes.php')));
+    	G::setrouter(include_once(ROOT . G::getSysPath('router.php')));
     }
 
     private function checkPath()
@@ -38,7 +39,6 @@ class Router
         if (!empty($_SERVER['REQUEST_URI']))
         {
             return trim($_SERVER['REQUEST_URI'], '/');
-            //return trim($_SERVER['REQUEST_URI']);
         }
     }
 
@@ -83,7 +83,7 @@ class Router
 
                     $parameters = $segments;
 
-                    $this->includeModel($actionName);
+                    $this->includeModel($controllerName);
                     $this->includeController($controllerFilePath, $controllerClassName, $actionMethodName, $parameters);
                     $isThere = true;
                 }  

@@ -36,16 +36,9 @@ class G
 		self::$router = $array;
 	}
 
-	public static function setglobal($withDefault = True, $array)
+	public static function setglobal($array)
 	{
-		if ($withDefault)
-		{
-			self::$global = array_merge_recursive($array, include_once(ROOT . self::getSysPath('global.php')));
-		}
-		else
-		{
-			self::$global = $array;
-		}
+		self::$global = $array;
 	}
 
 //	******************************************

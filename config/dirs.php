@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	'global' => '/config/global',
 	'controllers' => '/controllers',
@@ -10,4 +10,4 @@ return array(
 	'css' => '/template/style',
 	'js' => '/template/js'
 
-);
+];
