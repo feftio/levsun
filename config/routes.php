@@ -1,11 +1,14 @@
 <?php
+//*******************************************************************************
+//							SETTING START INFO
+//*******************************************************************************
 
 return
 [
 	'id([0-9]{0,10}$)' => 'id/index/$1',
 	'ticket([0-9]{0,10}$)' => 'ticket/index/$1',
 	'reg' => 'reg/index',
-	'about' => 'site/index',
+	'about' => 'about/index',
 	'contact' => 'contact/index',
 	'doc' => 'doc/index',
 	'' => 'main/index'

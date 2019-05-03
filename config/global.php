@@ -6,9 +6,20 @@
 return 
 [
 	'title' => 'Киноночь Алматы',
-	'css' => 
-	[
-		'default.css'
+
+	'css' => [
+		'default.css',
+		'fonts.css',
+		'wrapper.css'
+	],
+
+	'fontawesome' => [
+		'all.js',
+		'v4-shims.js'
+	],
+
+	'js' => [
+
 	]
 
 ];

@@ -7,11 +7,12 @@
 	<div class="wrapper">
 		<div class="wrapper__navigation" id="wrapper__navigation"></div>
 		<header class="header">
-			<div class="header__overlay"></div>
-			
-			<?php include_once ROOT . '/views/parts/nav.php'; ?>
+			<!--<div class="header__overlay"></div>-->
+
+		<?php include_once ROOT . '/views/parts/nav.php'; ?>
 
 		</header>
+
 	</div>
 
 	<?php include_once ROOT . '/views/parts/scripts.php'; ?>

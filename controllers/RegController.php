@@ -2,7 +2,7 @@
 /**
  * 
  */
-class MainController 
+class RegController 
 {
 
 //	**************************************************
@@ -10,12 +10,9 @@ class MainController
 
 	public function actionIndex()
 	{
-		G::setGlobal(True, [
-
-		]);
-		echo 'Main';
+		echo 'Reg';
 		exit;
-		include_once ROOT . '/views/main.php';
+		include_once ROOT . '/views/reg.php';
 	}
 
 //	**************************************************

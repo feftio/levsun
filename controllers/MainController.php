@@ -2,7 +2,7 @@
 /**
  * 
  */
-class MainController 
+class MainController
 {
 
 //	**************************************************
@@ -10,11 +10,15 @@ class MainController
 
 	public function actionIndex()
 	{
-		G::setGlobal(True, [
-
+		G::setvar(True, [
+			'menu__active' => 'main',
+			'css' => [
+				'nav.css',
+				'main__style.css',
+				'footer.css'
+			]
 		]);
-		echo 'Main';
-		exit;
+
 		include_once ROOT . '/views/main.php';
 	}
 

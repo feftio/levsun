@@ -5,13 +5,9 @@
 class Router
 {
 
-    public function __construct()
-    {
-        G::setdirs  (include_once(ROOT . G::getSysPath('dirs.php')));
-        G::setglobal(include_once(ROOT . G::getSysPath('global.php')));
-    	G::setroutes(include_once(ROOT . G::getSysPath('routes.php')));
-    	G::setrouter(include_once(ROOT . G::getSysPath('router.php')));
-    }
+//	******************************************
+//	******************************************
+//	******************************************
 
     private function checkPath()
     {
@@ -42,24 +38,31 @@ class Router
         }
     }
 
+//	******************************************
+//	******************************************
+//	******************************************
 
     private function includeModel($controllerClassName)
     {
-        $pathModelFile  = ROOT . G::getdir('models') . '\\' . $controllerClassName . 'Model.php';
+        $pathModelFile  = ROOT . G::getdirs('models') . '\\' . $controllerClassName . 'Model.php';
         $this->checkPath($pathModelFile);
 
         require_once $pathModelFile;
     }
 
-
-	private function includeController($controllerFile, $controllerName, $actionName, $parameters)
+	private function includeController($controllerClassName, $actionMethodName, $parameters)
     {
-        $this->checkPath($controllerFile);
-        require_once $controllerFile;
-        $controllerObject = new $controllerName;
-        $controllerObject->$actionName($parameters);
+    	$pathControllerFile = ROOT . G::getdirs('controllers') . '\\' . $controllerClassName . '.php';
+        $this->checkPath($pathControllerFile);
+
+        require_once $pathControllerFile;
+        $controllerObject = new $controllerClassName;
+        $controllerObject->$actionMethodName($parameters);
     }
 
+//	******************************************
+//	******************************************
+//	******************************************
 
     public function run()
     {
@@ -75,8 +78,6 @@ class Router
 
                     $controllerName = ucfirst(array_shift($segments));
                     $controllerClassName = $controllerName . 'Controller';
-                    $controllerFileName = $controllerClassName . '.php';
-                    $controllerFilePath = ROOT . '\controllers\\' . $controllerFileName;
 
                     $actionName = ucfirst(array_shift($segments));
                     $actionMethodName = 'action' . $actionName;
@@ -84,7 +85,8 @@ class Router
                     $parameters = $segments;
 
                     $this->includeModel($controllerName);
-                    $this->includeController($controllerFilePath, $controllerClassName, $actionMethodName, $parameters);
+                    $this->includeController($controllerClassName, $actionMethodName, $parameters);
+                    
                     $isThere = true;
                 }  
             }
@@ -94,4 +96,7 @@ class Router
                 include_once("error.php");
             }
     }
+//	******************************************
+//	******************************************
+//	******************************************
 }

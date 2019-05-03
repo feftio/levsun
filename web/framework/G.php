@@ -6,82 +6,144 @@ class G
 {
 	private static $SysPathes = 
 	[
-		'dirs.php'   => '\config\dirs.php',
-		'global.php' => '\config\global.php',
-		'router.php' => '\config\router.php',
-		'routes.php' => '\config\routes.php'
+		'dirs.php'   => '/config/dirs.php',
+		'global.php' => '/config/global.php',
+		'router.php' => '/config/router.php',
+		'routes.php' => '/config/routes.php'
 	];
 
-	private static $dirs       = [];
-	private static $global     = [];
-	private static $routes     = [];
-	private static $router     = [];
+	private static $dirs    = [];
+	private static $global  = [];
+	private static $router  = [];
+	private static $routes  = [];
+	private static $var     = [];
 
 //	******************************************
 //	*******************SET********************
 //	******************************************
 
-	public static function setdirs($array)
+	private static function setdirs()
 	{
-		self::$dirs = $array;
+		self::$dirs = include_once ROOT . self::$SysPathes['dirs.php'];
 	}
 
-	public static function setroutes($array)
+	private static function setglobal()
 	{
-		self::$routes = $array;
+		self::$global = include_once ROOT . self::$SysPathes['global.php'];
 	}
 
-	public static function setrouter($array)
+	private static function setrouter()
 	{
-		self::$router = $array;
+		self::$routes = include_once ROOT . self::$SysPathes['routes.php'];
 	}
 
-	public static function setglobal($array)
+	private static function setroutes()
 	{
-		self::$global = $array;
+		self::$router = include_once ROOT . self::$SysPathes['router.php'];
+	}
+
+//	******************************************
+//	******************************************
+//	******************************************
+
+	public static function init()
+	{
+		self::setdirs();
+		self::setglobal();
+		self::setrouter();
+		self::setroutes();
+	}
+
+	public static function setvar($useDefaultGlobal=true, $array=[])
+	{
+		if ($useDefaultGlobal)
+		{
+			self::$var = array_merge_recursive(self::getglobal(), $array);
+		}
+		else
+		{
+			self::$var = $array;
+		}
 	}
 
 //	******************************************
 //	*******************GET********************
 //	******************************************
 
-	public static function getdir($key='')
+	public static function getdirs($key='')
 	{
-		return self::$dirs[$key];
-	}	
-
-	public static function getroute($key='')
-	{
-		return self::$routes[$key];
+		if ($key === '')
+		{
+			return self::$dirs;
+		}
+		else
+		{
+			return self::$dirs[$key];
+		}
 	}
 
-	public static function getdirs()
+	public static function getglobal($key='')
 	{
-		return self::$dirs;
+		if ($key === '')
+		{
+			return self::$global;
+		}
+		else
+		{
+			return self::$global[$key];
+		}
 	}
 
-	public static function getroutes()
+	public static function getrouter($key='')
 	{
-		return self::$routes;
+		if ($key === '')
+		{
+			return self::$router;
+		}
+		else
+		{
+			return self::$router[$key];
+		}
 	}
 
-	public static function getSysPathes()
+	public static function getroutes($key='')
 	{
-		return self::$SysPathes;
+		if ($key === '')
+		{
+			return self::$routes;
+		}
+		else
+		{
+			return self::$routes[$key];
+		}
 	}
 
-	public static function getSysPath($key)
+	public static function getSysPathes($key='')
 	{
-		return self::$SysPathes[$key];
+		if ($key === '')
+		{
+			return self::$SysPathes;
+		}
+		else
+		{
+			return self::$SysPathes[$key];
+		}
 	}
 
-
-//	******************************************
-//	******************METHODS*****************
-//	******************************************
-
-	public static function getFullPathes()
+	public static function var($key)
 	{
-		
+		return self::$var[$key];
+	}
+
+	public static function varDirs($key)
+	{
+		$array = [];
+		foreach (self::var($key) as $path)
+		{
+			$array[] = self::getdirs($key) . '/' . $path;
+		}
+		return $array;
 	}
 }
+
+G::init();

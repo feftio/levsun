@@ -1,13 +1,23 @@
 <?php
+//*******************************************************************************
+//							SETTING START INFO
+//*******************************************************************************
 
 return [
 
-	'global' => '/config/global',
+//  ************ DEFAULT **************
 	'controllers' => '/controllers',
 	'models' => '/models',
 	'views' => '/views',
 	'parts' => '/views/parts',
 	'css' => '/template/style',
-	'js' => '/template/js'
+	'js' => '/template/js',
+//  ***********************************
+
+
+
+//	************** USER ***************
+	'fontawesome' => 'template/style/lib/fontawesome'
+//	***********************************
 
 ];
