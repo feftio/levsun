@@ -2,20 +2,15 @@
 /**
  * 
  */
-class MainController 
+class ContactController 
 {
 
 //	**************************************************
 //	**************************************************
 
 	public function actionIndex()
-	{
-		G::setGlobal(True, [
-
-		]);
-		echo 'Main';
-		exit;
-		include_once ROOT . '/views/main.php';
+	{	
+		include_once ROOT . '/views/contact.php';
 	}
 
 //	**************************************************
