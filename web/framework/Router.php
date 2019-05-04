@@ -2,6 +2,7 @@
 /**
  * 
  */
+
 class Router
 {
 
@@ -93,7 +94,7 @@ class Router
 
             if (!($isThere))
             {
-                include_once("error.php");
+                include_once ROOT . '/error.php';
             }
     }
 //	******************************************

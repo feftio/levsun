@@ -2,6 +2,7 @@
 /**
  * 
  */
+
 class G
 {
 	private static $SysPathes = 

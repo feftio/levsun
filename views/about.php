@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<?php include_once ROOT . '/views/parts/head.php'; ?>
+<?php View::render('views/parts', 'head.php') ?>
 
 <body>
 	<div class="wrapper">
 		<div class="wrapper__navigation" id="wrapper__navigation"></div>
-		<header class="header">
-			<!--<div class="header__overlay"></div>-->
 
-		<?php include_once ROOT . '/views/parts/nav.php'; ?>
-
-		</header>
+		<?php View::render('views/parts', 'nav.php') ?>
 
 	</div>
 
-	<?php include_once ROOT . '/views/parts/scripts.php'; ?>
+	<?php View::render('views/parts', 'footer.php') ?>
+
+	<?php View::render('views/parts', 'scripts.php') ?>
 
 </body>
 </html>

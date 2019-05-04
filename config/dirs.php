@@ -17,7 +17,7 @@ return [
 
 
 //	************** USER ***************
-	'fontawesome' => 'template/style/lib/fontawesome'
+	'fontawesome' => '/template/style/lib/fontawesome'
 //	***********************************
 
 ];

@@ -2,7 +2,7 @@
 /**
  * 
  */
-class MainController 
+class DocController 
 {
 
 //	**************************************************
@@ -10,12 +10,17 @@ class MainController
 
 	public function actionIndex()
 	{
-		G::setGlobal(True, [
+		G::setvar(True, [
+
+			'menu__active' => 'doc',
+			'css' => [
+				'parts/nav.css',
+				'parts/footer.css'
+			]
 
 		]);
-		echo 'Main';
-		exit;
-		include_once ROOT . '/views/main.php';
+
+		View::render('views', 'doc.php');
 	}
 
 //	**************************************************

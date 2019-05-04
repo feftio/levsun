@@ -35,7 +35,7 @@
 			</li>
 		</ul>
 		<div class="navbar__form" id="navbar__form">
-			<a class="navbar__form__login" href="#">
+			<a class="navbar__form__login" href="/reg">
 				<i class="fal fa-sign-in"></i>
 				<span class="navbar__form__span">Войти</span>
 			</a>

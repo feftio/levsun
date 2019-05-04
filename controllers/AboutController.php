@@ -11,16 +11,17 @@ class AboutController
 	public function actionIndex()
 	{
 		G::setvar(True, [
+			
 			'menu__active' => 'about',
 			'css' => [
-				'wrapper.css',
-				'nav.css',
-				//'main__style.css',
-				'footer.css'
+				'parts/nav.css',
+				'about.css',
+				'parts/footer.css'
 			]
 
 		]);
-		include_once ROOT . '/views/about.php';
+
+		View::render('views', 'about.php');
 	}
 
 //	**************************************************

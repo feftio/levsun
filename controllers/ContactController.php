@@ -9,8 +9,19 @@ class ContactController
 //	**************************************************
 
 	public function actionIndex()
-	{	
-		include_once ROOT . '/views/contact.php';
+	{
+		G::setvar(True, [
+
+			'menu__active' => 'contact',
+			'css' => [
+				'parts/nav.css',
+				'contact.css',
+				'parts/footer.css'
+			]
+
+		]);
+		
+		View::render('views', 'doc.php');
 	}
 
 //	**************************************************

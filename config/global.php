@@ -8,9 +8,9 @@ return
 	'title' => 'Киноночь Алматы',
 
 	'css' => [
-		'default.css',
-		'fonts.css',
-		'wrapper.css'
+		'parts/default.css',
+		'parts/fonts.css',
+		'parts/wrapper.css'
 	],
 
 	'fontawesome' => [
@@ -23,18 +23,3 @@ return
 	]
 
 ];
-
-/*
-* * * * * * * * * * * * * * * * * * *
-* return array(						*
-*	'menu__active' => 'main',		*
-*									*
-*	'css' => array(					*
-*		'main__style.css',			*
-*		'nav.css',					*
-*		'fonts.css',				*
-*		'footer.css',				*
-*	)								*
-*  );								*
-* * * * * * * * * * * * * * * * * * *
-*/
