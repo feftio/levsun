@@ -147,5 +147,14 @@
 		width: 80%;
 		margin: 0 auto;
 	}
-	
+
+}
+
+@media (max-width: 340px) {
+	.navbar__logo__cinema {
+		display: none;
+	}
+	.navbar__logo__night {
+		display: none;
+	}	
 }

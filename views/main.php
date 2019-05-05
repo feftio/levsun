@@ -18,14 +18,9 @@
 				</div>
 			</section>
 		</header>
-		<section class="form" id="form">
-			<div class="form__block">
-
-			</div>
-		</section>
 		<section class="info" id="info">
 			<div class="info__text">
-				<h2>Buy the ticket!</h2>
+				<h2>Забронировать место!</h2>
 				<p>asdaijojafoasofjsoafjasjfosa</p>
 			</div>
 			<div class="info__blocks">
@@ -34,8 +29,13 @@
 				<div class="info__block info__three"></div>
 				<div class="info__block info__four"></div>
 			</div>
-			
 		</section>
+		<section class="form" id="form">
+			<div class="form__block">
+
+			</div>
+		</section>
+		
 
 		<?php View::render('views/parts', 'footer.php') ?>
 
