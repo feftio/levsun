@@ -21,20 +21,28 @@
 		<section class="info" id="info">
 			<div class="info__text">
 				<h2>Забронировать место!</h2>
-				<p>asdaijojafoasofjsoafjasjfosa</p>
+				<p>Переходите к выбору мест!</p>
 			</div>
 			<div class="info__blocks">
-				<div class="info__block info__one"></div>
-				<div class="info__block info__two"></div>
-				<div class="info__block info__three"></div>
-				<div class="info__block info__four"></div>
+				<div class="info__block">
+					<div class="info__card info__one"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__card info__two"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__card info__three"></div>
+				</div>
+				<div class="info__block">
+					<div class="info__card info__four"></div>
+				</div>
 			</div>
 		</section>
-		<section class="form" id="form">
+		<!--<section class="form" id="form">
 			<div class="form__block">
 
 			</div>
-		</section>
+		</section>-->
 		
 
 		<?php View::render('views/parts', 'footer.php') ?>

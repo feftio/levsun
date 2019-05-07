@@ -2,7 +2,7 @@
 /**
  * 
  */
-class RegController 
+class LoginController 
 {
 
 //	**************************************************
@@ -12,16 +12,13 @@ class RegController
 	{
 		G::setvar(True, [
 			
-			'menu__active' => 'reg',
 			'css' => [
-				'parts/nav.css',
-				'contact.css',
-				'parts/footer.css'
+				'login.css'
 			]
 
 		]);
 
-		View::render('views', 'reg.php');
+		View::render('views', 'login.php');
 	}
 
 //	**************************************************

@@ -115,9 +115,8 @@
 	justify-content: space-between;
 	align-items: center;
 	min-height: 80vh;
-	width: 100%;
-	background: #F5F5F5;
-	padding: 60px;
+	background: #FFFFFF;
+	padding: 60px 0;
 }
 
 .info__text {
@@ -134,7 +133,7 @@
 }
 
 .info__text p {
-	font-family: 'Cinzel';
+	font-family: 'PF BeauSans Pro Light';
 	color: #A9A9A9;
 	font-size: 20px;
 }
@@ -142,21 +141,26 @@
 
 .info__blocks {
 	display: flex;
-	width: 90%;
+	width: 80%;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
 .info__block {
 	display: block;
+	width: 20%;
+	margin: 15px 15px;
+}
+
+.info__card {
+	display: block;
 
 	min-height: 350px;
+	max-height: 350px;
+	min-width: 150px;
+	max-width: 215px;
 
-	min-width: 215px;
-	max-width: 320px;
-
-	flex-basis: 20%;
-	margin: 15px 20px;
+	margin: 0 auto;
 	border-radius: 20px;
 	text-align: center;
 	background-color: #F3F3F3;
@@ -193,18 +197,16 @@
 	}
 
 	.info__block {
-		max-width: 310px;
-		flex-basis: 50%;
+		width: 45%;
 	}
+
 
 }
 
 @media (max-width: 911px) {
-
 	.info__block {
-		flex-basis: 100%;
+		width: 100%;
 	}
-
 }
 
 @media (max-width: 500px) {

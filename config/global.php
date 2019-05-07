@@ -9,8 +9,7 @@ return
 
 	'css' => [
 		'parts/default.css',
-		'parts/fonts.css',
-		'parts/wrapper.css'
+		'parts/fonts.css'
 	],
 
 	'fontawesome' => [

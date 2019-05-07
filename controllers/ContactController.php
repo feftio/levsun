@@ -14,6 +14,7 @@ class ContactController
 
 			'menu__active' => 'contact',
 			'css' => [
+				'parts/wrapper.css',
 				'parts/nav.css',
 				'contact.css',
 				'parts/footer.css'

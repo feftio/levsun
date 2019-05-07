@@ -15,6 +15,7 @@ class MainController
 
 			'menu__active' => 'main',
 			'css' => [
+				'parts/wrapper.css',
 				'parts/nav.css',
 				'main.css',
 				'parts/footer.css'

@@ -14,6 +14,7 @@ class DocController
 
 			'menu__active' => 'doc',
 			'css' => [
+				'parts/wrapper.css',
 				'parts/nav.css',
 				'parts/footer.css'
 			]

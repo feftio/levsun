@@ -14,6 +14,7 @@ class AboutController
 			
 			'menu__active' => 'about',
 			'css' => [
+				'parts/wrapper.css',
 				'parts/nav.css',
 				'about.css',
 				'parts/footer.css'
