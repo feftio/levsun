@@ -1,71 +1,242 @@
-.wrapper {
-	display: block;
-	position: relative;
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-	height: 100%;
-	padding: 80px 30px 40px 30px;
-	background-color: #F2F2F2;
 }
 
-.line {
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	padding: 50px 20px 20px 20px;
+	overflow: hidden;
+	background-color: rgba(244,244,244,0.8);
+}
+
+.wrapper:after {
+	content: '';
 	position: absolute;
-	left: 40px;
-	top: 15px;
-	height: 40px;
-	width: 40px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url(/template/image/glasses.png);
+	background-size: 100px 100px;
+	background-repeat: repeat;
+	opacity: 0.15;
+	z-index: -1;
+}
+
+/*-----------------*/
+
+.big-image {
+	position: relative;
+	display: block;
+    min-height: 100vh;
+    width: 50%;
+    background-image: url(/template/image/5-1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.big-image:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(77,77,77,0.7);
+}
+
+/*-----------------*/
+
+.line-for-arrow {
+	display: block;
+	height: 50px;
+	width: 100%;
+	background-color: #FDE389;
+}
+
+.arrow-back {
+	position: absolute;
+	display: block;
+	left: 30px;
+	top: 20px;
+	color: #484848;
+}
+
+/*-----------------*/
+
+.form__wrapper {
+	position: relative;
+	display: block;
+	min-height: 460px;
+	min-width: 400px;
+	max-height: 600px;
+	padding: 70px 40px 30px 40px;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+}
+
+.logo__circle {
+	position: absolute;
+	display: block;
+	height: 100px;
+	width: 100px;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	border-radius: 200px;
 	background-color: #FFFFFF;
 }
 
-.line a {
+.logo__image {
 	position: absolute;
 	display: block;
+	top: 53%;
 	left: 50%;
-	top: 50%;
+	opacity: 0.8;
 	transform: translate(-50%, -50%);
-	color: #484848;
 }
 
-
-
-.login {
+.form__welcome {
 	display: block;
-	width: 400px;
-	height: 640px;
-	margin: 0 auto;
+	font-family: PF BeauSans Pro Light;
+	font-size: 30px;
 	text-align: center;
-    background: #FFFFFF;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 40px 55px 33px 55px;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-}
-
-.login form a {
-	display: block;
-}
-
-.login form span {
-	display: block;
-	font-family: Amatic SC;
-	font-size: 50px;
 	font-weight: bold;
-	margin-top: 30px;
-	color: #2F2F2F;
+	color: #7A7A7A;
+}
+
+.out-input {
+	position: relative;
+	border-bottom: 2px solid #969696;
+}
+
+.input-style {
+	display: block;
+	font-family: PF BeauSans Pro Light;
+	height: 40px;
+	width: 100%;
+	padding: 0 5px;
+	line-height: 1.2;
+	font-size: 15px;
+	color: #5A5A5A;
+	background: transparent;
 }
 
 .eye {
-	font-size: 12px;
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #565656;
+	font-size: 14px;
 }
 
-.form__input {
-    font-size: 15px;
-    color: #555555;
-    line-height: 1.2;
-    display: block;
+.eye-active {
+	display: block !important;
+}
+
+.focus-input {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.login {
+	margin-top: 40px;
+}
+
+.password {
+	margin-top: 40px;
+}
+
+.sign-in {
+	margin-top: 40px;
+}
+
+.button {
+	display: block;
+	text-decoration: none;
+	font-family: PF BeauSans Pro Light;
+	font-size: 20px;
+	color: #fff;
+	line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0 auto;
     width: 100%;
-    height: 45px;
-    background: transparent;
-    padding: 0 5px;
+    height: 50px;
+    background-color: #8BD885;
+    border-radius: 20px;
+}
+
+.button:hover {
+	cursor: pointer;
+	background-color: #FFB923;
+}
+
+.button:active {
+	background-color: #FEB311;
+	outline: 0;
+}
+
+.button:focus {
+	outline: 0;
+}
+
+.pop-reg {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 5%;
+	width: 80%;
+	transform: translateX(-50%);
+	text-align: center;
+	user-select: none;
+}
+
+.pop-reg label {
+	cursor: pointer;
+	color: #B93838;
+}
+
+/*-----------------*/
+
+@media (max-width: 540px) {
+
+	.form__wrapper {
+		min-width: 100px;
+		min-height: 480px;
+	}
+
+}
+
+@media (max-width: 290px) {
+
+	.form__welcome {
+		font-size: 20px;
+	}
+
+	.form__wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+		min-height: 460px;
+	}
+
+}
+
+@media (max-width: 1025px) {
+	.big-image {
+		display: none;
+	}
 }

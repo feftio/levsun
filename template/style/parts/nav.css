@@ -26,7 +26,7 @@
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 80;
-	transition: background-color 1s;
+	transition: background-color 0.5s;
 }
 
 .navbar__opacity {
@@ -45,6 +45,7 @@
 /*-----------------*/
 
 .navbar__logo {
+	font-family: Amatic SC;
 	display: block;
 	text-align: center;
 	user-select: none;
@@ -74,6 +75,7 @@
 /*-----------------*/
 
 .navbar__list {
+	font-family: Amatic SC;
 	display: block;
 	text-align: center;
 	user-select: none;
@@ -91,6 +93,7 @@
 /*-----------------*/
 
 .navbar__form {
+	font-family: Amatic SC;
 	display: block;
 	text-align: center;
 	user-select: none;

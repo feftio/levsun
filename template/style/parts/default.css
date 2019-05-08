@@ -50,16 +50,22 @@ ul {
 }
 
 a {
-	font-family: 'Amatic SC';
 	text-decoration: none;
 	color: #FFFFFF;
 	font-size: 28px;
-	vertical-align: center;
 	cursor: pointer;
-	transition: 0.2s;
 }
 
 input {
 	outline: none;
     border: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }
