@@ -6,10 +6,6 @@
 class Router
 {
 
-//	******************************************
-//	******************************************
-//	******************************************
-
     private function checkPath()
     {
     	$errors = array();
@@ -33,22 +29,21 @@ class Router
 
     private function getURI()
     {
-        if (!empty($_SERVER['REQUEST_URI']))
+       /* if (!empty($_SERVER['REQUEST_URI']))
         {
             return trim($_SERVER['REQUEST_URI'], '/');
+        }*/
+        $uri = '';
+        if (!empty($_SERVER['REQUEST_URI']))
+        {
+            $uri = $_SERVER['REQUEST_URI'];
         }
-    }
 
-//	******************************************
-//	******************************************
-//	******************************************
-
-    private function includeModel($controllerClassName)
-    {
-        $pathModelFile  = ROOT . G::getdirs('models') . '\\' . $controllerClassName . 'Model.php';
-        $this->checkPath($pathModelFile);
-
-        require_once $pathModelFile;
+        if (($cutoff = strpos($uri, '?')) !== false)
+        {
+            $uri = substr($uri, 0, $cutoff);
+        }
+        return trim($uri, '/');
     }
 
 	private function includeController($controllerClassName, $actionMethodName, $parameters)
@@ -60,10 +55,6 @@ class Router
         $controllerObject = new $controllerClassName;
         $controllerObject->$actionMethodName($parameters);
     }
-
-//	******************************************
-//	******************************************
-//	******************************************
 
     public function run()
     {
@@ -85,7 +76,6 @@ class Router
 
                     $parameters = $segments;
 
-                    $this->includeModel($controllerName);
                     $this->includeController($controllerClassName, $actionMethodName, $parameters);
                     
                     $isThere = true;
@@ -97,7 +87,5 @@ class Router
                 include_once ROOT . '/error.php';
             }
     }
-//	******************************************
-//	******************************************
-//	******************************************
+
 }

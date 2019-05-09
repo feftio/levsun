@@ -1,7 +1,5 @@
-var span = document.querySelectorAll(".eye");
-span[0].addEventListener("click", showPW);
-span[1].addEventListener("click", showPW);
 
+/*
 function validation()                                    
 { 
     var name = document.forms["RegForm"]["Name"];               
@@ -68,23 +66,21 @@ function validation()
     } 
    
     return true; 
-}
+}*/
 
-function showPW()
-{
-    var span = document.querySelectorAll(".eye");
-        input = document.getElementById("password");
 
-    span[0].classList.toggle("eye-active");
-    span[1].classList.toggle("eye-active");
+$("#").click(function() {
 
-    if (span[1].classList.contains('eye-active'))
-    {
-        input.setAttribute("type", "text");
-    }
+});
 
-    if (span[0].classList.contains('eye-active'))
-    {
-        input.setAttribute('type', 'password');
-    }
-}
+$("#sign-up").click(function() {
+  $("#loginForm").hide("fast", function() {
+    $("#regForm").show("fast");   
+  });
+});
+
+$("#sign-in").click(function() {
+  $("#regForm").hide("fast", function() {
+    $("#loginForm").show("fast");   
+  });
+});

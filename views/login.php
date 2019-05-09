@@ -9,27 +9,69 @@
 		<div class="wrapper">
 			<a class="arrow-back" href="/"><i class="fa fa-arrow-left"></i></a>
 			<div class="form__wrapper">
-				<form class="form" method="post" onsubmit="validation(this)">
+
+				<form class="form" id="loginForm" method="post" style="display: block;">
+
 					<div class="logo__circle"><a class="logo__image" href="/"><img src="/template/image/logoCN1.png" alt="placeholder+image" width="70" height="70"></a></div>
+
 					<span class="form__welcome">Добро пожаловать!</span>
+
 					<div class="login out-input">	
 						<input class="input-style" type="text" name="login" placeholder="Логин">
-						<span class="focus-input" data-placeholder="Логин"></span>
 					</div>
+
 					<div class="password out-input">
-						<input class="input-style" id="password" type="password" name="password" placeholder="Пароль">
+						<input class="input-style" id="password-1" type="password" name="password" placeholder="Пароль">
 						<span class="eye eye-active"><i class="fa fa-eye" aria-hidden="true"></i></span>
 						<span class="eye"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
-						<span class="focus-input" data-placeholder="Пароль"></span>
 					</div>
-					<div class="sign-in">
-						<button class="button">Войти</button>		
+
+					<div class="sign">
+						<button class="button green">Войти</button>		
 					</div>
-					<div></div>
-					<div class="pop-reg">
-						<span>У вас нет аккаунта? </span><label>Зарегистрироваться</label>
+
+					<div class="pop">
+						<span>У вас нет аккаунта? </span><label class="clip-sign-up" id="sign-up">Зарегистрироваться</label>
 					</div>
+
 				</form>
+
+				<form class="form" id="regForm" method="post" style="display: none;">
+
+					<div class="logo__circle"><a class="logo__image" href="/"><img src="/template/image/logoCN1.png" alt="placeholder+image" width="70" height="70"></a></div>
+
+					<span class="form__welcome">Регистрация</span>
+
+					<div class="email out-input">
+						<input class="input-style" type="text" name="login" placeholder="Email">
+					</div>
+
+					<div class="login out-input">
+						<input class="input-style" type="text" name="login" placeholder="Логин">
+					</div>
+
+					<div class="password out-input">
+						<input class="input-style" id="password-2" type="password" name="password" placeholder="Пароль">
+						<span class="eye eye-active"><i class="fa fa-eye" aria-hidden="true"></i></span>
+						<span class="eye"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+					</div>
+
+					<div class="password out-input">
+						<input class="input-style" id="password-3" type="password" name="password" placeholder="Повторите пароль">
+						<span class="eye eye-active"><i class="fa fa-eye" aria-hidden="true"></i></span>
+						<span class="eye"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+					</div>
+
+					<div class="sign">
+						<button class="button red">Создать</button>		
+					</div>
+
+					<div class="pop">
+						<span>У вас уже есть аккаунт? </span><span class="clip-sign-in" id="sign-in">Войти</span>
+					</div>
+					
+				</form>
+
 			</div>
 		</div>
 	</div>

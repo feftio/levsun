@@ -73,12 +73,20 @@
 .form__wrapper {
 	position: relative;
 	display: block;
-	min-height: 460px;
-	min-width: 400px;
-	max-height: 600px;
+	min-height: 360px;
+	min-width: 100px;
+	width: 420px;
 	padding: 70px 40px 30px 40px;
 	border-radius: 20px;
 	background-color: #FFFFFF;
+}
+
+.form {
+	display: none;
+}
+
+.active__form {
+	display: block !important;
 }
 
 .logo__circle {
@@ -143,26 +151,27 @@
 	display: block !important;
 }
 
-.focus-input {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	pointer-events: none;
+.email {
+	margin-top: 20px;
 }
 
 .login {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 .password {
+	margin-top: 20px;
+}
+
+.sign {
 	margin-top: 40px;
 }
 
-.sign-in {
-	margin-top: 40px;
+.pop {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+	user-select: none;
 }
 
 .button {
@@ -176,7 +185,6 @@
     margin: 0 auto;
     width: 100%;
     height: 50px;
-    background-color: #8BD885;
     border-radius: 20px;
 }
 
@@ -194,20 +202,22 @@
 	outline: 0;
 }
 
-.pop-reg {
-	display: block;
-	position: absolute;
-	left: 50%;
-	bottom: 5%;
-	width: 80%;
-	transform: translateX(-50%);
-	text-align: center;
-	user-select: none;
+.clip-sign-in {
+	cursor: pointer;
+	color: #6ECD67;
 }
 
-.pop-reg label {
+.clip-sign-up {
 	cursor: pointer;
 	color: #B93838;
+}
+
+.red {
+	background-color: #B93838;
+}
+
+.green {
+	background-color: #8BD885;
 }
 
 /*-----------------*/
@@ -221,7 +231,7 @@
 
 }
 
-@media (max-width: 290px) {
+@media (max-width: 350px) {
 
 	.form__welcome {
 		font-size: 20px;

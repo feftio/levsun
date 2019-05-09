@@ -1,9 +1,7 @@
 <?php
 require_once ROOT . '/lib/rb.php';
 
-
-
-R::setup("mysql:host=192.168.0.103;dbname=users","root",""); 
+R::setup("mysql:host=192.168.0.103;dbname=cinema_night","root",""); 
 
 if (!R::testConnection()) 
 {
