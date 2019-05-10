@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<?php View::render('views/parts', 'head.php') ?>
+<?php View::render('parts/head.php') ?>
 
 <body>
 	<div class="container">
@@ -63,7 +63,7 @@
 					</div>
 
 					<div class="sign">
-						<button class="button red">Создать</button>		
+						<button class="button red">Создать</button>
 					</div>
 
 					<div class="pop">

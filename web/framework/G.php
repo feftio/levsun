@@ -10,49 +10,30 @@ class G
 		'dirs.php'   => '/config/dirs.php',
 		'global.php' => '/config/global.php',
 		'router.php' => '/config/router.php',
-		'routes.php' => '/config/routes.php'
+		'routes.php' => '/config/routes.php',
+		'database.php' => '/config/database.php'
 	];
 
-	private static $dirs    = [];
-	private static $global  = [];
-	private static $router  = [];
-	private static $routes  = [];
-	private static $var     = [];
+	private static $dirs     = [];
+	private static $global   = [];
+	private static $router   = [];
+	private static $routes   = [];
+	private static $database = [];
+
+	private static $var      = [];
 
 //	******************************************
 //	*******************SET********************
 //	******************************************
 
-	private static function setdirs()
-	{
-		self::$dirs = include_once ROOT . self::$SysPathes['dirs.php'];
-	}
-
-	private static function setglobal()
-	{
-		self::$global = include_once ROOT . self::$SysPathes['global.php'];
-	}
-
-	private static function setrouter()
-	{
-		self::$routes = include_once ROOT . self::$SysPathes['routes.php'];
-	}
-
-	private static function setroutes()
-	{
-		self::$router = include_once ROOT . self::$SysPathes['router.php'];
-	}
-
-//	******************************************
-//	******************************************
-//	******************************************
-
 	public static function init()
 	{
-		self::setdirs();
-		self::setglobal();
-		self::setrouter();
-		self::setroutes();
+		self::$dirs = include_once ROOT . self::$SysPathes['dirs.php'];
+		self::$global = include_once ROOT . self::$SysPathes['global.php'];
+		self::$routes = include_once ROOT . self::$SysPathes['routes.php'];
+		self::$router = include_once ROOT . self::$SysPathes['router.php'];
+		self::$database = include_once ROOT . self::$SysPathes['database.php'];
+
 	}
 
 	public static function setvar($useDefaultGlobal=true, $array=[])
@@ -116,6 +97,18 @@ class G
 		else
 		{
 			return self::$routes[$key];
+		}
+	}
+
+	public static function getdatabase($key='')
+	{
+		if ($key === '')
+		{
+			return self::$database;
+		}
+		else
+		{
+			return self::$database[$key];
 		}
 	}
 

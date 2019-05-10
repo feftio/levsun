@@ -6,17 +6,17 @@
 return [
 
 //  ************ DEFAULT **************
-	'controllers' => '/controllers',
-	'models' => '/models',
-	'views' => '/views',
-	'parts' => '/views/parts',
-	'css' => '/template/style',
-	'js' => '/template/js',
+	'controllers' => '/_controllers',
+	'models' => '/_models',
+	'views' => '/_views',
 //  ***********************************
 
 
 
 //	************** USER ***************
+	'parts' => '/_views/parts',
+	'css' => '/template/style',
+	'js' => '/template/js',
 	'fontawesome' => '/template/style/lib/fontawesome'
 //	***********************************
 

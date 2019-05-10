@@ -21,7 +21,7 @@ class DocController
 
 		]);
 
-		View::render('views', 'doc.php');
+		View::render('doc.php');
 	}
 
 //	**************************************************

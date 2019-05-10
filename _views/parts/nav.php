@@ -16,21 +16,9 @@
 				</a>
 			</li>
 			<li class="navbar__list__li">
-				<a class="navbar__list__a <?php if (G::var('menu__active') == 'about') echo 'menu__active'; ?>" href="/about">
-					<i class="fas fa-user"></i>
-					<span class="navbar__list__span">О нас</span>
-				</a>
-			</li>
-			<li class="navbar__list__li">
-				<a class="navbar__list__a <?php if (G::var('menu__active') == 'contact') echo 'menu__active'; ?>" href="/contact">
-					<i class="ico__contact far fa-phone-volume"></i>
-					<span class="navbar__list__span">Контакты</span>
-				</a>
-			</li>
-			<li class="navbar__list__li">
 				<a class="navbar__list__a <?php if (G::var('menu__active') == 'doc') echo 'menu__active'; ?>" href="/doc">
 					<i class="ico__documentation fas fa-books"></i>
-					<span class="navbar__list__span">Документация</span>
+					<span class="navbar__list__span">Инструкция</span>
 				</a>
 			</li>
 		</ul>

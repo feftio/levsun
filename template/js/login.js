@@ -69,9 +69,7 @@ function validation()
 }*/
 
 
-$("#").click(function() {
 
-});
 
 $("#sign-up").click(function() {
   $("#loginForm").hide("fast", function() {

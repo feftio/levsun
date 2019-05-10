@@ -2,7 +2,8 @@
 /**
  * 
  */
-class LoginController 
+
+class MainController
 {
 
 //	**************************************************
@@ -11,14 +12,18 @@ class LoginController
 	public function actionIndex()
 	{
 		G::setvar(True, [
-			
+
+			'menu__active' => 'main',
 			'css' => [
-				'login.css'
+				'parts/wrapper.css',
+				'parts/nav.css',
+				'main.css',
+				'parts/footer.css'
 			]
 
 		]);
 
-		View::render('views', 'login.php');
+		View::render('main.php');
 	}
 
 //	**************************************************

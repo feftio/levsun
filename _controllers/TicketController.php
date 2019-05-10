@@ -2,6 +2,7 @@
 /**
  * 
  */
+include_once ROOT . '/models/Ticket.php';
 class TicketController 
 {
 

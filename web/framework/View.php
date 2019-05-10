@@ -4,13 +4,8 @@
  */
 class View
 {
-	public static function render($path, $file)
+	public static function render($fileName)
 	{
-		include_once ROOT . '/' . $path . '/' .$file;
+		include_once ROOT . G::getdirs('views') . '/' . $fileName;
 	} 
-
-	public static function renderDirs($keyDirs, $file)
-	{
-		include_once ROOT . G::getdirs($keyDirs) . '/' . $file;
-	}
 }

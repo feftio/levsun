@@ -1,7 +1,7 @@
 <?php
-require_once ROOT . '/lib/rb.php';
-
-R::setup("mysql:host=192.168.0.103;dbname=cinema_night","root",""); 
+require_once ROOT . '/web/rb/rb.php';
+//R::setup( 'mysql:host=127.0.0.1;dbname=redbean','login', 'password' );
+R::setup( 'mysql:host=' . G::getdatabase('host') . ';dbname=' . G::getdatabase('dbname') . '', G::getdatabase('user'), G::getdatabase('password')); 
 
 if (!R::testConnection()) 
 {
