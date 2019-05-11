@@ -1,6 +1,6 @@
 <?php
 require_once ROOT . '/web/framework/ErrorHandle.php';
-(new \lib\ErrorHandle())->register();
+//(new \lib\ErrorHandle())->register();
 require_once ROOT . '/web/framework/Config.php';
 //*******************************************************//
 require_once ROOT . '/web/framework/G.php';

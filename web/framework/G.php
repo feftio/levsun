@@ -27,9 +27,16 @@ class G
 //	*******************GET********************
 //	******************************************
 
-	public static function var($key)
+	public static function var($key='')
 	{
-		return self::$var[$key];
+		if ($key === '')
+		{
+			return self::$var;
+		}
+		else
+		{
+			return self::$var[$key];
+		}
 	}
 
 	public static function varDirs($key)
@@ -41,4 +48,14 @@ class G
 		}
 		return $array;
 	}
+
+//	******************************************
+//	*****************Methods******************
+//	******************************************
+	
+	public static function addvar($array)
+	{
+		self::$var = array_merge(self::$var, $array);
+	}
+
 }
