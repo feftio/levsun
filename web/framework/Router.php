@@ -48,7 +48,7 @@ class Router
 
 	private function includeController($controllerClassName, $actionMethodName, $parameters)
     {
-    	$pathControllerFile = ROOT . G::getdirs('controllers') . '\\' . $controllerClassName . '.php';
+    	$pathControllerFile = ROOT . Config::getdirs('controllers') . '\\' . $controllerClassName . '.php';
         $this->checkPath($pathControllerFile);
 
         require_once $pathControllerFile;
@@ -61,7 +61,7 @@ class Router
         $uri = $this->getURI();
         $isThere = false;
 
-            foreach (G::getroutes() as $uriPattern => $path) 
+            foreach (Config::getroutes() as $uriPattern => $path) 
             {
                 if (preg_match('/^' . $uriPattern . '$/', $uri)) 
                 {

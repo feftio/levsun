@@ -16,7 +16,7 @@
 
 					<span class="form__welcome">Добро пожаловать!</span>
 
-					<div class="login out-input">	
+					<div class="login out-input">
 						<input class="input-style" type="text" name="login" placeholder="Логин">
 					</div>
 
