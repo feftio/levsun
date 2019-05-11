@@ -79,6 +79,7 @@
 	padding: 70px 40px 30px 40px;
 	border-radius: 20px;
 	background-color: #FFFFFF;
+	user-select: none;
 }
 
 .form {
@@ -143,7 +144,7 @@
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
-	color: #565656;
+	color: #5A5A5A;
 	font-size: 14px;
 }
 
@@ -171,7 +172,6 @@
 	display: block;
 	margin-top: 20px;
 	text-align: center;
-	user-select: none;
 }
 
 .button {

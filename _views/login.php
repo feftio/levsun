@@ -43,11 +43,11 @@
 					<span class="form__welcome">Регистрация</span>
 
 					<div class="email out-input">
-						<input class="input-style" type="text" name="login" placeholder="Email">
+						<input class="input-style" type="text" name="login" placeholder="Логин">
 					</div>
 
 					<div class="login out-input">
-						<input class="input-style" type="text" name="login" placeholder="Логин">
+						<input class="input-style" type="text" name="email" placeholder="Email">
 					</div>
 
 					<div class="password out-input">
@@ -57,9 +57,7 @@
 					</div>
 
 					<div class="password out-input">
-						<input class="input-style" id="password-3" type="password" name="password" placeholder="Повторите пароль">
-						<span class="eye eye-active"><i class="fa fa-eye" aria-hidden="true"></i></span>
-						<span class="eye"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+						<input class="input-style" id="password-3" type="password" name="password_r" placeholder="Повторите пароль">
 					</div>
 
 					<div class="sign">

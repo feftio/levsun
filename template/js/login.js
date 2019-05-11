@@ -68,17 +68,40 @@ function validation()
     return true; 
 }*/
 
+$(".eye").click(function()
+{
+$(this).siblings(".eye").addClass("eye-active");
+$(this).removeClass("eye-active");
+if ($(this).siblings("input").attr("type") === "text")
+{
+    $(this).siblings("input").attr("type", "password");
+    if ($(this).siblings("input").attr("id") === "password-2")
+    {
+        $("#password-3").attr("type", "password");
+    }
+}
+else
+{
+    $(this).siblings("input").attr("type", "text");
+    if ($(this).siblings("input").attr("id") === "password-2")
+    {
+        $("#password-3").attr("type", "text");
+    }
+}
+});
 
-
-
-$("#sign-up").click(function() {
-  $("#loginForm").hide("fast", function() {
-    $("#regForm").show("fast");   
+$("#sign-up").click(function()
+{
+  $("#loginForm").hide("fast", function()
+  {
+    $("#regForm").show("fast");
   });
 });
 
-$("#sign-in").click(function() {
-  $("#regForm").hide("fast", function() {
-    $("#loginForm").show("fast");   
+$("#sign-in").click(function()
+{
+  $("#regForm").hide("fast", function()
+  {
+    $("#loginForm").show("fast");
   });
 });
