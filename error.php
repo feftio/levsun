@@ -1,2 +1,2 @@
 <?php
-require_once('views/404.htm');
+require_once ROOT . '/_views/404.htm';

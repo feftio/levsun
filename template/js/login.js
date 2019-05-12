@@ -68,26 +68,87 @@ function validation()
     return true; 
 }*/
 
+$(document).ready(function()
+{
+    $("#regForm").submit(function()
+    {
+        $.ajax(
+        {
+            url: "login",
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(response) 
+            {
+                var string = "";
+                result = $.parseJSON(response);
+                console.log(result);
+                $.each(result, function(keyError, value)
+                {
+                    string += value + "<br>";
+                });
+                $('#result_form').html(string);
+            },
+            error: function(response)
+            {
+                $('#result_form').html('Ошибка. Данные не отправлены.');
+            }
+        });
+        return false;
+    });
+
+     $("#loginForm").submit(function()
+    {
+        $.ajax(
+        {
+            url: "login",
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(response) 
+            {
+                result = $.parseJSON(response);
+                console.log(result);
+                $('#result_form').html(result);
+            },
+            error: function(response)
+            {
+                $('#result_form').html('Ошибка. Данные не отправлены.');
+            }
+        });
+        return false;
+    });
+
+
+
+
+});
+
+
+
+
+
+
 $(".eye").click(function()
 {
 $(this).siblings(".eye").addClass("eye-active");
 $(this).removeClass("eye-active");
-if ($(this).siblings("input").attr("type") === "text")
-{
-    $(this).siblings("input").attr("type", "password");
-    if ($(this).siblings("input").attr("id") === "password-2")
+
+    if ($(this).siblings("input").attr("type") === "text")
     {
-        $("#password-3").attr("type", "password");
+        $(this).siblings("input").attr("type", "password");
+        if ($(this).siblings("input").attr("id") === "password-2")
+        {
+            $("#password-3").attr("type", "password");
+        }
     }
-}
-else
-{
-    $(this).siblings("input").attr("type", "text");
-    if ($(this).siblings("input").attr("id") === "password-2")
+    else
     {
-        $("#password-3").attr("type", "text");
+        $(this).siblings("input").attr("type", "text");
+        if ($(this).siblings("input").attr("id") === "password-2")
+        {
+            $("#password-3").attr("type", "text");
+        }
     }
-}
+    
 });
 
 $("#sign-up").click(function()
