@@ -8,8 +8,7 @@
 	require_once ROOT . '/web/framework/View.php';
 	require_once ROOT . '/web/framework/Support/helpers.php';
 	require_once ROOT . '/web/framework/Router.php';
-
-
+	require_once ROOT . '/web/framework/Ajax.php';
 
 
 

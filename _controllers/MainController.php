@@ -23,8 +23,6 @@ class MainController
 
 		]);
 
-		csrf_field();
-
 		View::render('main.php');
 	}
 

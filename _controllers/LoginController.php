@@ -10,10 +10,10 @@ class LoginController
 
 	public function actionIndex()
 	{
-		function regUser()
-		{
+
+		Ajax::catch(function(){
+
 			$data = $_POST;
-	
 			$errors = [];
 
 			if (trim($data["login"]) == "")
@@ -42,7 +42,7 @@ class LoginController
 				$user->login    = $data["login"];
 				$user->email    = $data["email"];
 				$user->password = $data["password"];
-				$user->date     = '26.01.99';
+				$user->date     = date("Y-m-d H:i:s");
 				R::store($user);
 				echo json_encode(["success" => "Регистрация прошла успешно!"]);
 			}
@@ -50,24 +50,17 @@ class LoginController
 			{
 				echo json_encode($errors);
 			}
-		}
 
-		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
-		{
-			regUser();
-		}
-		else
-		{
-			G::setvar(True, [
-				'css' => [
-					'login.css'
-				]
-			]);
-			View::render('login.php');
-		}
+		});
+	
+		G::setvar(True, [
+			'css' => [
+				'login.css'
+			]
+		]);
+
+		View::render('login.php');
 	}
-
-//	**************************************************
-//	**************************************************
-
 }
+//	**************************************************
+//	**************************************************
