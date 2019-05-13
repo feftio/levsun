@@ -72,12 +72,14 @@ $(document).ready(function()
 {
     $("#regForm").submit(function()
     {
+
         $.ajax(
         {
             url: "login",
             type: "POST",
             data: $(this).serialize(),
-            success: function(response) 
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            success: function(response)
             {
                 var string = "";
                 result = $.parseJSON(response);
