@@ -233,7 +233,7 @@
 
 	.form__wrapper {
 		min-width: 100px;
-		min-height: 480px;
+		/*min-height: 480px;*/
 	}
 
 }
@@ -247,7 +247,7 @@
 	.form__wrapper {
 		padding-left: 10px;
 		padding-right: 10px;
-		min-height: 460px;
+		/*min-height: 460px;*/
 	}
 
 }

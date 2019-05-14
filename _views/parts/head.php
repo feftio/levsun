@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="csrf-token" content="{{token}}" />
+	<meta name="csrf-token" content="<?php csrf_token() ?>"/>
 	<link rel="icon" type="image/x-icon" href="../../template/image/favicon.ico">
 
 	<?php foreach (G::varDirs('css') as $value){ ?>

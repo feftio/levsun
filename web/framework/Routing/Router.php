@@ -13,7 +13,7 @@ class Router
     	{
     		if (!file_exists($path))
     		{
-    			$errors[] = 'Not found: ' . $path;
+                throw new Exception('File is not excist!', 500);
     		}
     	}
 
@@ -60,6 +60,7 @@ class Router
     {
         $uri = $this->getURI();
         $isThere = false;
+        Csrf::catch();
 
             foreach (Config::getroutes() as $uriPattern => $path) 
             {
@@ -77,7 +78,7 @@ class Router
                     $parameters = $segments;
 
                     $this->includeController($controllerClassName, $actionMethodName, $parameters);
-                    
+
                     $isThere = true;
                 }  
             }

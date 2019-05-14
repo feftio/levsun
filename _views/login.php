@@ -43,6 +43,7 @@
 					<span class="form__welcome">Регистрация</span>
 
 					<div class="email out-input">
+						<?php csrf_field() ?>
 						<input class="input-style" type="text" name="login" placeholder="Логин">
 					</div>
 

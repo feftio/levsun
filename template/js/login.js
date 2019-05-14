@@ -66,7 +66,9 @@ function validation()
     } 
    
     return true; 
-}*/
+}
+*/
+
 
 $(document).ready(function()
 {
@@ -78,20 +80,21 @@ $(document).ready(function()
             url: "login",
             type: "POST",
             data: $(this).serialize(),
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function(response)
             {
                 var string = "";
+                $('#result_form').html(string);
                 result = $.parseJSON(response);
-                console.log(result);
                 $.each(result, function(keyError, value)
                 {
-                    string += value + "<br>";
+                    string += value + '<br>';
                 });
                 $('#result_form').html(string);
             },
             error: function(response)
             {
+                result = $.parseJSON(response);
+                window.location.href = 'http://cinema-night/';
                 $('#result_form').html('Ошибка. Данные не отправлены.');
             }
         });
@@ -108,7 +111,6 @@ $(document).ready(function()
             success: function(response) 
             {
                 result = $.parseJSON(response);
-                console.log(result);
                 $('#result_form').html(result);
             },
             error: function(response)
@@ -119,12 +121,7 @@ $(document).ready(function()
         return false;
     });
 
-
-
-
 });
-
-
 
 
 

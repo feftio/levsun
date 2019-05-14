@@ -11,9 +11,8 @@ class LoginController
 	public function actionIndex()
 	{
 
-		Ajax::catch(function(){
+		Ajax::catch(function($data) {
 
-			$data = $_POST;
 			$errors = [];
 
 			if (trim($data["login"]) == "")

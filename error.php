@@ -1,2 +1,2 @@
 <?php
-require_once ROOT . '/_views/404.htm';
+require_once dirname(__FILE__) . '/_views/404.htm';
