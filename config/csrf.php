@@ -5,5 +5,6 @@
 
 return [
 	'power' => '1',
-	'key' => 'csrf_token'
+	'key' => 'csrf_token',
+	'except' => '/'
 ];

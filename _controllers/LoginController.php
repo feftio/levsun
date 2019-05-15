@@ -51,6 +51,9 @@ class LoginController
 			}
 
 		});
+
+		header('Location: http://cinema-night/');
+		exit;
 	
 		G::setvar(True, [
 			'css' => [
