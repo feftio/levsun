@@ -1,0 +1,20 @@
+{
+    "name": "levsun/levsun",
+    "type": "project",
+    "description": "cn",
+    "config": {
+    	"sort-packages": true
+    },
+    "authors": [
+        {
+            "name": "Lik Edurad",
+            "email": "feft99@mail.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "levsun\\": "web/levsun"
+        }
+    }
+}
