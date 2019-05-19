@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'levsun\\' => array($baseDir . '/web/levsun'),
+    'Zend\\Diactoros\\' => array($vendorDir . '/zendframework/zend-diactoros/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
 );

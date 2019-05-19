@@ -11,7 +11,9 @@
             "email": "feft99@mail.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "zendframework/zend-diactoros": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "levsun\\": "web/levsun"
