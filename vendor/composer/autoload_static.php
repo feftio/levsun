@@ -26,8 +26,13 @@ class ComposerStaticInit0b02e15a91ce999c2d938afa9e2d6518
         array (
             'Zend\\Diactoros\\' => 15,
         ),
+        'R' => 
+        array (
+            'Relay\\' => 6,
+        ),
         'P' => 
         array (
+            'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
         ),
     );
@@ -40,6 +45,14 @@ class ComposerStaticInit0b02e15a91ce999c2d938afa9e2d6518
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
+        'Relay\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/relay/relay/src',
+        ),
+        'Psr\\Http\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-server-handler/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (

@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "relay/relay": "~2.0",
         "zendframework/zend-diactoros": "^2.1"
     },
     "autoload": {
